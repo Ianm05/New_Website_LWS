@@ -1,0 +1,40 @@
+/* ========================================================
+ TOKENS -- edit theset to reskin the whole site
+ ========================================================== */
+ :root {
+--ink:              #1C2321; /* primary text / dark surfaces */   
+--paper:            #EFEEE8;
+--paper-alt:        #E5E3D9;
+--green:            #2F5233;
+--green-dark:       #223D26;
+--gold:             #C7962F;
+--line:              rgba(28, 35,  33.  0.14);
+
+--font-display: "Fraunces" , Georgia, serif;
+--font-body:    "IBM Plex Sans", system-ui, sans-serif;
+--font-mono:    "IBM Plex Mono" , monospace;
+
+--radius: 2px;
+--wrap: 1100px;
+ }
+
+ * { box-sizing: border-box;}
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webskit-font-smoothing: antialiased;
+}
+
+.wrap {
+    max-width: var (--wrap);
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+a
