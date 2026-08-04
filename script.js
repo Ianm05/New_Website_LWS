@@ -7,7 +7,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // 1. Make a Sheet with columns: Title | Tag | Description | ApplyLink
 // 2. File → Share → Publish to web → pick the sheet tab → format: CSV → Publish
 // 3. Paste that published URL below, replacing the placeholder.
-const JOBS_SHEET_CSV_URL = "PASTE_YOUR_PUBLISHED_CSV_URL_HERE";
+const JOBS_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vST6irfaXdhFu_kulGNv736hxrOGQw1JePywIqZ620iaQRBUPr1x-wwhJfB8jQDEuqEJKTbwK6cVYrI/pub?output=csv";
 
 const jobsGrid = document.getElementById("jobs-grid");
 
@@ -47,7 +47,7 @@ function escapeHtml(str) {
 }
 
 function loadJobs() {
-  if (!JOBS_SHEET_CSV_URL || JOBS_SHEET_CSV_URL === "PASTE_YOUR_PUBLISHED_CSV_URL_HERE") {
+  if (!JOBS_SHEET_CSV_URL || JOBS_SHEET_CSV_URL === "https://docs.google.com/spreadsheets/d/e/2PACX-1vST6irfaXdhFu_kulGNv736hxrOGQw1JePywIqZ620iaQRBUPr1x-wwhJfB8jQDEuqEJKTbwK6cVYrI/pub?output=csv") {
     jobsGrid.innerHTML = '<p class="jobs-status">Job openings will appear here once the Google Sheet is connected — see README.</p>';
     return;
   }
