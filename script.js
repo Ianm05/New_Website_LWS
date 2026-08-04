@@ -13,7 +13,7 @@ const jobsGrid = document.getElementById("jobs-grid");
 
 function renderJobs(rows) {
   jobsGrid.innerHTML = "";
-
+git log --oneline -3
   const jobs = rows.filter(row => row.Title && row.Title.trim() !== "");
 
   if (jobs.length === 0) {
