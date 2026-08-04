@@ -23,7 +23,7 @@
         <a href="#jobs">Openings</a>
         <a href="#meet">Book HR</a>
         <a href="#resources">Resources</a>
-        <a href="#contact">Contacts</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -59,36 +59,14 @@
         <p class="eyebrow">Employment Opportunities</p>
         <h2>Open roles</h2>
         <p class="section-sub">
-          Each card below is one posting. Simply click on the job posting that you would like to apply for.
+          Each card below is one posting. Duplicate a <code>.pin-card</code> in
+          <code>index.html</code> to add a role, or delete one when it's filled.
         </p>
       </div>
 
-      <div class="card-grid">
-
-        <a class="pin-card" href="#" target="_blank" rel="noopener">
-          <span class="pin" aria-hidden="true"></span>
-          <span class="card-tag">Part time * Full time </span>
-          <h3>Home Health Aide</h3>
-          <p>Link this card to the job's application page or ATS listing.</p>
-          <span class="card-go">View posting →</span>
-        </a>
-
-        <a class="pin-card" href="#" target="_blank" rel="noopener">
-          <span class="pin" aria-hidden="true"></span>
-          <span class="card-tag">Full-time · Operations</span>
-          <h3>Therapist</h3>
-          <p>Link this card to the job's application page or ATS listing.</p>
-          <span class="card-go">View posting →</span>
-        </a>
-
-        <a class="pin-card" href="#" target="_blank" rel="noopener">
-          <span class="pin" aria-hidden="true"></span>
-          <span class="card-tag">Part-time · Support</span>
-          <h3>Customer Support Associate</h3>
-          <p>Link this card to the job's application page or ATS listing.</p>
-          <span class="card-go">View posting →</span>
-        </a>
-
+      <!-- Job cards are injected here by script.js, pulled live from the Google Sheet. -->
+      <div class="card-grid" id="jobs-grid">
+        <p class="jobs-status">Loading openings…</p>
       </div>
     </div>
   </section>
@@ -100,17 +78,21 @@
         <p class="eyebrow">Book HR</p>
         <h2>Meet with the HR team</h2>
         <p class="section-sub">
-         
+          Embed your booking tool below — Google Calendar appointment
+          schedules and Calendly both give you an iframe embed code.
+          Replace the <code>src</code> in the iframe with yours.
         </p>
       </div>
 
       <div class="embed-frame">
-  <div class="embed-calendar">
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1XIga0kyKRQVLa4MZkwOIH0c-jPO6wX2xGn4tN9F5W3IrD-Q_ztq7eRilO0S1ijQyNi2POBvqj" target="_blank" rel="noopener" class="btn btn-primary">
-    Book an Appointment
-    </a>
-  </div>
-</div>
+        <div class="embed-calendar">
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1XIga0kyKRQVLa4MZkwOIH0c-jPO6wX2xGn4tN9F5W3IrD-Q_ztq7eRilO0S1ijQyNi2POBvqj" target="_blank" rel="noopener" class="btn btn-primary">
+            Book an Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============ OTHER RESOURCES ============ -->
   <section id="resources" class="directory directory-alt">
@@ -123,7 +105,34 @@
 
       <div class="card-grid">
 
-      
+        <a class="pin-card" href="#" target="_blank" rel="noopener">
+          <span class="pin" aria-hidden="true"></span>
+          <span class="card-tag">Reference</span>
+          <h3>Employee Handbook</h3>
+          <p>Link to your policy document or handbook PDF.</p>
+          <span class="card-go">Open →</span>
+        </a>
+
+        <a class="pin-card" href="#" target="_blank" rel="noopener">
+          <span class="pin" aria-hidden="true"></span>
+          <span class="card-tag">Forms</span>
+          <h3>Onboarding Checklist</h3>
+          <p>Link to your onboarding form or document set.</p>
+          <span class="card-go">Open →</span>
+        </a>
+
+        <a class="pin-card" href="#" target="_blank" rel="noopener">
+          <span class="pin" aria-hidden="true"></span>
+          <span class="card-tag">Benefits</span>
+          <h3>Benefits Overview</h3>
+          <p>Link to your benefits summary or provider portal.</p>
+          <span class="card-go">Open →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CONTACT / FORM ============ -->
   <section id="contact" class="contact">
     <div class="wrap contact-inner">
@@ -161,6 +170,7 @@
       <span class="footer-note">Built with a plain HTML/CSS starter — no framework required.</span>
     </div>
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="script.js"></script>
 </body>
