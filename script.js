@@ -1,19 +1,21 @@
 // Sets the footer year automatically — no need to update it by hand.
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
 // ===========================================================
 // JOB OPENINGS — pulled live from a published Google Sheet
 // ===========================================================
-// 1. Make a Sheet with columns: Title | Tag | Description | ApplyLink
-// 2. File → Share → Publish to web → pick the sheet tab → format: CSV → Publish
-// 3. Paste that published URL below, replacing the placeholder.
 const JOBS_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vST6irfaXdhFu_kulGNv736hxrOGQw1JePywIqZ620iaQRBUPr1x-wwhJfB8jQDEuqEJKTbwK6cVYrI/pub?output=csv";
 
 const jobsGrid = document.getElementById("jobs-grid");
 
 function renderJobs(rows) {
+  if (!jobsGrid) return;
   jobsGrid.innerHTML = "";
-git log --oneline -3
+
+  // Filters out empty rows or rows without a Title
   const jobs = rows.filter(row => row.Title && row.Title.trim() !== "");
 
   if (jobs.length === 0) {
@@ -47,11 +49,15 @@ function escapeHtml(str) {
 }
 
 function loadJobs() {
-  if (!JOBS_SHEET_CSV_URL || JOBS_SHEET_CSV_URL === "https://docs.google.com/spreadsheets/d/e/2PACX-1vST6irfaXdhFu_kulGNv736hxrOGQw1JePywIqZ620iaQRBUPr1x-wwhJfB8jQDEuqEJKTbwK6cVYrI/pub?output=csv") {
-    jobsGrid.innerHTML = '<p class="jobs-status">Job openings will appear here once the Google Sheet is connected — see README.</p>';
+  if (!jobsGrid) return;
+
+  // Only block if URL is completely empty
+  if (!JOBS_SHEET_CSV_URL) {
+    jobsGrid.innerHTML = '<p class="jobs-status">Job openings will appear here once the Google Sheet is connected.</p>';
     return;
   }
 
+  // Parse CSV data directly into objects using headers
   Papa.parse(JOBS_SHEET_CSV_URL, {
     download: true,
     header: true,
