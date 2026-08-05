@@ -96,6 +96,12 @@ h1, h2, h3 {
 
 .brand-mark { color: var(--gold); font-size: 1rem; }
 
+.brand-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
 .site-nav { display: flex; gap: 28px; }
 
 .site-nav a {
