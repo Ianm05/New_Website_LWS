@@ -137,7 +137,7 @@ h1, h2, h3 {
   overflow: hidden;
   background-image:
     linear-gradient(rgba(28, 35, 33, 0.55), rgba(28, 35, 33, 0.55)),
-    url('images/New_York.jpg');
+    url("images/New_York.jpg");
   background-size: cover;
   background-position: center;
   color: var(--paper);
