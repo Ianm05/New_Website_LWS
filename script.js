@@ -70,3 +70,28 @@ function loadJobs() {
 }
 
 loadJobs();
+// ==================================================
+// CONTACT FORM - hands off to a pre-filled Google form
+// ==================================================
+const GOOGLE_FORM_BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf5gAAPsRra6njUIDEaG_3bB-TUGDZ4Ur6ef0njVLeGuwm5pQ/viewform";
+const NAME_ENTRY_ID = "entry.1287623871";
+const EMAIL_ENTRY_ID = "entry.693571926";
+const contactForm = document.getElementByID("hr-contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit" ,(e) => {
+    e.preventDefault();
+    const name = document.getElementById("name").value
+    const email = document.getElementById("email").value;
+
+    const params = new URLSearchParams();
+    params.set(NAME_ENTRY_ID, name);
+    params.set(EMAIL_ENTRY_ID, email);
+
+    const prefilledUrl = `${GOOGLE_FORM_BASE_URL}?usp=pp_url&{params.toString()}`;
+    window.open(prefilledUrl, "_blank" , "noopener");
+  });
+}
+    
+
+                               
