@@ -260,6 +260,92 @@ h1, h2, h3 {
 }
 
 .pin-card:hover .card-go { color: var(--gold); }
+/* ===========================================================
+   RESOURCES — filing-index layout (distinct from job cards)
+   =========================================================== */
+.resources {
+  background: var(--paper);
+  padding: 88px 0 100px;
+}
+
+.res-index {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 56px;
+}
+
+@media (max-width: 760px) {
+  .res-index { grid-template-columns: 1fr; }
+}
+
+.res-group-title {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+}
+
+.res-item {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 16px 4px;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  transition: background 0.15s ease, padding-left 0.15s ease;
+}
+
+.res-item:hover {
+  background: var(--paper-alt);
+  padding-left: 10px;
+}
+
+.res-code {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  width: 44px;
+}
+
+.res-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.res-title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 500;
+}
+
+.res-desc {
+  font-size: 0.86rem;
+  color: #5B665F;
+}
+
+.res-arrow {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.res-item:hover .res-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--gold);
+}
 
 /* ===========================================================
    BOOK A MEETING (embed section)
